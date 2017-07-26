@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
 */
 class DepositLog
 {
+    const DEPOSIT_PERCENT = 1;
+
+    const DEPOSIT_COMMISSION = 2;
+
     /**
     * @ORM\Column(type="integer")
     * @ORM\Id

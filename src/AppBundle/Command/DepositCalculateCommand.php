@@ -50,6 +50,7 @@ class DepositCalculateCommand extends ContainerAwareCommand
                 $depositLog->setDeposit($deposit);
                 $depositLog->setBalance($deposit->getBalance());
                 $depositLog->setCreatedAt(new \DateTime());
+                $depositLog->setType(DepositLog::DEPOSIT_PERCENT);
                 $em->persist($depositLog);
             }
             // if deposit created by any day of month, but not 31. calculate at day-to-day
@@ -60,6 +61,7 @@ class DepositCalculateCommand extends ContainerAwareCommand
                 $depositLog2->setDeposit($deposit);
                 $depositLog2->setBalance($deposit->getBalance());
                 $depositLog2->setCreatedAt(new \DateTime());
+                $depositLog2->setType(DepositLog::DEPOSIT_PERCENT);
                 $em->persist($depositLog2);
             }
 
@@ -72,6 +74,7 @@ class DepositCalculateCommand extends ContainerAwareCommand
                     $depositLog3->setDeposit($deposit);
                     $depositLog3->setBalance($deposit->getBalance());
                     $depositLog3->setCreatedAt(new \DateTime());
+                    $depositLog3->setType(DepositLog::DEPOSIT_COMMISSION);
                     $em->persist($depositLog3);
                 }
 
@@ -82,6 +85,7 @@ class DepositCalculateCommand extends ContainerAwareCommand
                     $depositLog4->setDeposit($deposit);
                     $depositLog4->setBalance($deposit->getBalance());
                     $depositLog4->setCreatedAt(new \DateTime());
+                    $depositLog4->setType(DepositLog::DEPOSIT_COMMISSION);
                     $em->persist($depositLog4);
                 }
 
@@ -92,6 +96,7 @@ class DepositCalculateCommand extends ContainerAwareCommand
                     $depositLog5->setDeposit($deposit);
                     $depositLog5->setBalance($deposit->getBalance());
                     $depositLog5->setCreatedAt(new \DateTime());
+                    $depositLog5->setType(DepositLog::DEPOSIT_COMMISSION);
                     $em->persist($depositLog5);
                 }
             }
